@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".ExportActivity">
+
+    <!-- ScrollView would be needed if the screen is full, but it makes the keyboard pop up by default?! -->
+    <TableLayout
+        android:id="@+id/table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_height="match_parent"
+                android:layout_span="3"
+                android:layout_weight="1"
+                android:text='The notes can be exported as clear text in different formats.\n"Path" is the filepath, "File" is the filename.\nTo synchronize the notes with a web service (send the clear text file in a HTTP request) use the "URL" field.\nThe settings will be saved only when the "Export" button is pressed.' />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/pathTextView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Path"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:id="@+id/pathEditText"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="14"
+                android:inputType="textUri"
+                android:textSize="16sp" />
+            <Button
+                android:id="@+id/browseButton"
+                android:layout_height="match_parent"
+                android:text="Browse" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/fileTextView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="File"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:id="@+id/fileEditText"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="14"
+                android:inputType="textUri"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/blankTextView1"
+                android:layout_height="match_parent" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/urlTextView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="URL"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:id="@+id/urlEditText"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="14"
+                android:inputType="textUri"
+                android:textSize="16sp" />
+            <CheckBox
+                android:id="@+id/urlCheckBox"
+                android:layout_height="match_parent" />
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_span="3"
+                android:layout_weight="1"
+                android:minHeight="0px"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/exportButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:minHeight="0px"
+                    android:text="Export" />
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:minHeight="0px"
+                    android:text="Cancel" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
